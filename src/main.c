@@ -3,8 +3,14 @@
 #include "../headers/lexer.h"
 
 int main() {
-    Token token = construct_token(INTEGER, "5");
-    printf("Token Type: %d\nToken Value: %s\n", token.type, token.value);
-    free(token.value);
+    Token token;
+    char* input = "5 + 5";
+   
+    while(token.type != EOF_TOKEN) {
+        token = tokenize(input);
+        printf("Token Type: %d, Token Value: %s\n", token.type, token.value);
+        free(token.value);
+    }
+    
     return 0;
 }

@@ -18,5 +18,6 @@ typedef struct {
 } Token;
 
 Token construct_token(TokenType type, char* value);
+Token tokenize(char* input);
 
 #endif
